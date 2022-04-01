@@ -5,41 +5,42 @@ public class RockPaperScissor
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-        System.out.println("WELCOME\nThis is a rock paper scissor game.\nThere will be five rounds in this game.\nIf there is a tie, the round will not be counted.\nThe scores will be displayed after each round.\nThe one with greater score will be declared the winner.");
-        int n=0,a=0,b=0;
+        System.out.println("WELCOME\nThis is score_computer rock paper scissor game.\nThere will be five rounds in this game.\nIf there is score_computer tie, the round will not be counted.\nThe scores will be displayed after each round.\nThe one with greater score will be declared the winner.");
+        int n=0,score_computer=0,score_player=0;
+        // n indicates round number
         while(n!=5)
         {
             System.out.println("Enter :\n1 for Rock\n2 for Paper\n3 for Scissor");
             System.out.print("Player : ");
-            double p = in.nextByte();
+            double choice_player = in.nextByte();
 
-            if (p>3 || p<1)
+            if (choice_player>3 || choice_player<1)
             {
                 System.out.println("Invalid choice! Enter again.");
                 continue;
             }
-            double c = Math.floor((Math.random()*3)+1);
-            System.out.println("Computer : "+(int)c);
+            double choice_computer = Math.floor((Math.random()*3)+1);
+            System.out.println("Computer : "+(int)choice_computer);
 
-            if(p==1 && c==2 || p==2 && c==3 || p==3 && c==1)
+            if(choice_player==1 && choice_computer==2 || choice_player==2 && choice_computer==3 || choice_player==3 && choice_computer==1)
             {
-                a++;
-                System.out.println("Computer : "+a+" | Player : "+b);
+                score_computer++;
+                System.out.println("Computer : "+score_computer+" | Player : "+score_player);
             }
-            else if(c==1 && p==2 || c==2 && p==3 || c==3 && p==1)
+            else if(choice_computer==1 && choice_player==2 || choice_computer==2 && choice_player==3 || choice_computer==3 && choice_player==1)
             {
-                b++;
-                System.out.println("Computer : "+a+" | Player : "+b);
+                score_player++;
+                System.out.println("Computer : "+score_computer+" | Player : "+score_player);
             }
             else
             {
-                System.out.println("Computer : "+a+" | Player : "+b);
+                System.out.println("Computer : "+score_computer+" | Player : "+score_player);
                 continue;
             }
             n++;
         }
 
-        if(a>b)
+        if(score_computer>score_player)
             System.out.println("Computer wins.");
         else
             System.out.println("Player wins.");
